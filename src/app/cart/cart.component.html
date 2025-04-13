@@ -1,0 +1,12 @@
+<h2>Kosár</h2>
+<div *ngIf="cartItems.length === 0">A kosár üres.</div>
+
+<div *ngFor="let item of cartItems; let i = index">
+  <h3>{{ item.name }}</h3>
+  <p>{{ item.description }}</p>
+  <p><strong>{{ item.price | currency:'HUF' }}</strong></p>
+  <button (click)="remove(i)">Eltávolítás</button>
+  <hr />
+</div>
+
+<p *ngIf="cartItems.length > 0">Összesen: {{ getTotal() | currency:'HUF' }}</p>

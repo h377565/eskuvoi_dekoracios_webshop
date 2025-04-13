@@ -1,0 +1,16 @@
+<div class="login-container">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <mat-form-field appearance="fill">
+        <mat-label>Felhasználónév</mat-label>
+        <input matInput formControlName="username">
+      </mat-form-field>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Jelszó</mat-label>
+        <input matInput formControlName="password" type="password">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" type="submit">Bejelentkezés</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(to right, #ffccd5, #e0bbff);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+    a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #333;
+      transition: color 0.3s;
+  
+      &:hover {
+        color: #cc0066;
+      }
+  
+      &.active {
+        color: #fff;
+        background-color: #cc0066;
+        padding: 0.4rem 0.8rem;
+        border-radius: 2rem;
+      }
+    }
+  }
+  

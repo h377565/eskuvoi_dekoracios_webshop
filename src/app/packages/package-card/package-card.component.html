@@ -1,0 +1,13 @@
+<mat-card class="package-card" (click)="select()">
+  <mat-card-header>
+    <mat-card-title>{{ package.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <img [src]="package.image" alt="{{ package.name }}" class="package-image">
+    <p>{{ package.description | shorten:30 }}</p>
+    <p><strong>{{ package.price | currency:'HUF' }}</strong></p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button color="primary" (click)="addToCart()">Kosárba</button>
+  </mat-card-actions>
+</mat-card>

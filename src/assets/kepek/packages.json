@@ -1,0 +1,21 @@
+[
+    {
+      "name": "Romantikus Rózsadoboz",
+      "description": "Egy csomag teli rózsákkal, elegáns rózsaszín árnyalatokban.",
+      "price": 15000,
+      "image": "assets/kepek/rozsadoboz.jpg"
+    },
+    {
+      "name": "Szatén szalag",
+      "description": "Sima felületű, csillogó szatén szalag klasszikus dekorációs célokra.",
+      "price": 18000,
+      "image": "assets/kepek/szaten.jpg"
+    },
+    {
+      "name": "",
+      "description": "Teljes dekoráció virágokkal.",
+      "price": 12000,
+      "image": "assets/kepek/organza.jpg"
+    }
+  ]
+  

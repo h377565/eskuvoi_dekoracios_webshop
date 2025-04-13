@@ -1,0 +1,7 @@
+<div class="package-list">
+  <app-package-card
+    *ngFor="let p of packages"
+    [package]="p"
+    (selected)="handleSelection(p)"
+  ></app-package-card>
+</div>
