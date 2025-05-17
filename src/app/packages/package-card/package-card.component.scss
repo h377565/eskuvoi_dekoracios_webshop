@@ -1,30 +1,91 @@
 .package-card {
-    background-color: #ffe6f0; 
-    border-radius: 1rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease-in-out;
-    cursor: pointer;
-    text-align: center;
-  
-    &:hover {
-      transform: scale(1.02);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    }
-  
-    mat-card-title {
-      color: #d63384; 
-      font-weight: bold;
-      text-align: center;
-      margin-left: 50px;
-      padding-bottom: 5px;
-    }
-  
-    mat-card-content p {
-      color: #444;
-    
-    }
-    img{
-        height: 200px;
-    }
+  background: linear-gradient(145deg, #fff0f6, #ffe6f0);
+  border-radius: 24px;
+  box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  overflow: hidden;
+  padding: 24px;
+  position: relative;
+}
+
+.package-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 16px 36px rgba(0, 0, 0, 0.2);
+}
+
+.package-card::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, #f8bbd0aa, transparent 70%);
+  z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+
+.package-card::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  left: -60px;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, #e1bee7aa, transparent 70%);
+  z-index: 0;
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+mat-card-title {
+  position: relative;
+  z-index: 1;
+  font-size: 28px;
+  color: #b6007d;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 16px;
+  text-shadow: 0px 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+mat-card-content {
+  position: relative;
+  z-index: 1;
+
+  p {
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    color: #5a005f;
+    margin-bottom: 12px;
   }
-  
+}
+
+img {
+  position: relative;
+  z-index: 1;
+  height: fit-content;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(15px);
+    opacity: 0.8;
+  }
+}

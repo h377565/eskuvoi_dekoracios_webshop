@@ -1,0 +1,17 @@
+<div class="auth-container">
+  <h2>Belépés</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="fill">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" type="email" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Jelszó</mat-label>
+      <input matInput formControlName="password" type="password" required>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Belépés</button>
+  </form>
+  <p>Még nincs fiókod? <a routerLink="/register">Regisztrálj itt!</a></p>
+</div>

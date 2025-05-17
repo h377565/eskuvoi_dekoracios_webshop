@@ -1,12 +1,31 @@
-<h2>Kosár</h2>
-<div *ngIf="cartItems.length === 0">A kosár üres.</div>
+<div class="cart-container">
+  <h2>Kosarad</h2>
 
-<div *ngFor="let item of cartItems; let i = index">
-  <h3>{{ item.name }}</h3>
-  <p>{{ item.description }}</p>
-  <p><strong>{{ item.price | currency:'HUF' }}</strong></p>
-  <button (click)="remove(i)">Eltávolítás</button>
-  <hr />
+  <div *ngIf="cartItems.length === 0" class="empty-cart">
+    A kosarad üres.
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+    <mat-card class="cart-item" *ngFor="let item of cartItems; let i = index">
+      <mat-card-header>
+        <mat-card-title>{{ item.name }}</mat-card-title>
+        <mat-card-subtitle>{{ item.price | currency:'HUF' }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        <p>{{ item.description }}</p>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-icon-button color="warn" (click)="remove(i)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <div class="cart-summary">
+      <p><strong>Összesen: {{ getTotal() | currency:'HUF' }}</strong></p>
+      <button mat-raised-button color="warn" (click)="clearCart()">Kosár törlése</button>
+    </div>
+  </div>
 </div>
-
-<p *ngIf="cartItems.length > 0">Összesen: {{ getTotal() | currency:'HUF' }}</p>

@@ -11,8 +11,8 @@ import { MaterialModule } from '../shared/material.module';
 })
 export class GalleryComponent {
   images = [
-    '/organza.jpg',
-    '/rozsadoboz.jpg',
-    '/szaten.jpg'
+    'images/organza.jpg',
+    'images/rozsadoboz.jpg',
+    'images/szaten.jpg'
   ];
 }

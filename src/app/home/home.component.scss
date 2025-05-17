@@ -1,19 +1,108 @@
-h1{
-    font-size: 45px;
-    font-family: 'Times New Roman', Times, serif;
-    color: #cc0066;
-    text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap');
 
+:host {
+  display: block;
+  background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+  min-height: 100vh;
+  padding: 2rem;
+  animation: fadeIn 1s ease-in;
 }
-p{
-    font-family: 'Times New Roman', Times, serif;
-    color: #cc0066;
-    text-align: center;
-    font-size: 25px;
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 4rem);
+  position: relative;
+  overflow: hidden;
 }
-img{
-    height: 400px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+
+.hero {
+  text-align: center;
+  max-width: 900px;
+  padding: 3rem;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-radius: 2rem;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease;
+}
+
+.hero:hover {
+  transform: scale(1.01);
+}
+
+h1 {
+  font-size: 64px;
+  font-family: 'Playfair Display', serif;
+  color: #b6007d;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  color: #7b1fa2;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+img {
+  max-width: 100%;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  margin-top: 2rem;
+  transition: transform 0.4s ease;
+}
+
+img:hover {
+  transform: scale(1.03);
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #ffb6c1aa, transparent 70%);
+  top: -100px;
+  left: -100px;
+  z-index: 0;
+  animation: pulse 6s ease-in-out infinite;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #e1bee7aa, transparent 70%);
+  bottom: -80px;
+  right: -80px;
+  z-index: 0;
+  animation: pulse 7s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

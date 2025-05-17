@@ -33,23 +33,44 @@ export class PackagesComponent implements OnInit {
           id: 1,
           name: 'Romantikus Rózsadoboz',
           description: 'Egy csomag teli rózsákkal, elegáns rózsaszín árnyalatokban.',
-          price: 15000,
-          image: '/public/rozsadoboz.jpg'
+          price: 4000,
+          image: '/images/rozsadoboz.jpg'
         },
         {
           id: 2,
           name: 'Szatén szalag',
           description: 'Sima felületű, csillogó szatén szalag klasszikus dekorációs célokra. ',
-          price: 18000,
-          image: '/szaten.jpg'
+          price: 1800,
+          image: '/images/szaten.jpg'
         },
         {
           id: 3,
           name: 'Organza szalag',
           description: 'Prémium minőségű organza szalag, mely elegáns csillogásával emeli ki a legkülönlegesebb pillanatokat. Romantikus kiegészítő bármilyen dekorációhoz.',
-          price: 12000,
-          image: '/organza.jpg'
-        }
+          price: 1200,
+          image: '/images/organza.jpg'
+        },
+        {
+          id: 5,
+          name: 'Fotófal',
+          description: 'Letisztult fotófal díszekkel együtt',
+          price: 10000,
+          image: '/images/fotofal.png'
+        },
+        {
+          id: 6,
+          name: 'Tortadísz',
+          description: 'Tortába szúrható dísz felirattal',
+          price: 5000,
+          image: '/images/tortadisz.png'
+        },
+        /*{
+          id: 7,
+          name: 'Csillámos asztalszoknya',
+          description: 'Különleges alkalmakra csillogó asztaldísz.',
+          price: 13000,
+          image: '/images/lufik.png'
+        }*/
       ];
   
       

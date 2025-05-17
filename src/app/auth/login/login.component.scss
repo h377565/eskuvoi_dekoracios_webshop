@@ -1,0 +1,32 @@
+.auth-container {
+  max-width: 400px;
+  margin: 5rem auto;
+  padding: 2rem;
+  background: #fff0f5;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+
+  h2 {
+    color: #b6007d;
+    margin-bottom: 1rem;
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    width: 100%;
+    background-color: #b6007d;
+    color: white;
+    font-weight: bold;
+  }
+
+  a {
+    color: #b6007d;
+    text-decoration: underline;
+  }
+}
