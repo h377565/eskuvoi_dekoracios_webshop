@@ -7,6 +7,7 @@ import { ShortenPipe } from '../shared/pipes/shorten.pipe';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CartService } from '../shared/cart.service';
 import {Input } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -19,7 +20,10 @@ import {Input } from '@angular/core';
 export class PackagesComponent implements OnInit {
   packages: DecorPackage[] = [];
   @Input() package!: DecorPackage;
-  constructor(private cartService: CartService) {}
+  constructor(
+    private cartService: CartService,
+    private snackBar: MatSnackBar
+  ) {}
 
   
 
@@ -64,13 +68,7 @@ export class PackagesComponent implements OnInit {
           price: 5000,
           image: '/images/tortadisz.png'
         },
-        /*{
-          id: 7,
-          name: 'Csillámos asztalszoknya',
-          description: 'Különleges alkalmakra csillogó asztaldísz.',
-          price: 13000,
-          image: '/images/lufik.png'
-        }*/
+        
       ];
   
       
@@ -89,5 +87,6 @@ export class PackagesComponent implements OnInit {
   addToCart() {
     this.cartService.addToCart(this.package);
   }
+  
   
 }

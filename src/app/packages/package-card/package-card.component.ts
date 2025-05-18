@@ -26,4 +26,7 @@ export class PackageCardComponent {
   addToCart() {
     this.cartService.addToCart(this.package);
   }
+  @Input() szin: string = ''; 
+  @Output() torles = new EventEmitter<void>(); 
+
 }

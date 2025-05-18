@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, doc, updateDoc, deleteDoc, collectionData, query, orderBy, where, limit} from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, doc, updateDoc, deleteDoc, collectionData, query, orderBy, where, limit, startAfter } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Rendeles } from './models/rendeles.model';
 
@@ -39,6 +39,15 @@ getFelhasznaloRendelesek(email: string): Observable<Rendeles[]> {
   const q = query(collRef, orderBy('datum', 'desc'), where('email', '==', email));
   return collectionData(q, { idField: 'id' }) as Observable<Rendeles[]>;
 }
-
+getLapozottRendelesek(lastDatum: any): Observable<Rendeles[]> {
+  const collRef = collection(this.firestore, 'rendelesek');
+  const q = query(
+    collRef,
+    orderBy('datum'),
+    startAfter(lastDatum),
+    limit(5)
+  );
+  return collectionData(q, { idField: 'id' }) as Observable<Rendeles[]>;
+}
 
 }
