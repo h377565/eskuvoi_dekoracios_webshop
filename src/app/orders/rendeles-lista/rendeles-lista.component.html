@@ -1,0 +1,15 @@
+<mat-card *ngFor="let rendeles of rendelesek$ | async" style="margin-bottom: 16px;">
+  <mat-card-title>{{ rendeles.nev }}</mat-card-title>
+  <mat-card-subtitle>{{ rendeles.email }} – {{ rendeles.cim }}</mat-card-subtitle>
+  <mat-card-content>
+    <p><strong>Termékek:</strong></p>
+    <ul>
+      <li *ngFor="let termek of rendeles.termekek">
+        {{ termek.name }} – {{ termek.price | currency:'HUF' }}
+      </li>
+    </ul>
+    <p *ngIf="rendeles.megjegyzes">
+      <strong>Megjegyzés:</strong> {{ rendeles.megjegyzes }}
+    </p>
+  </mat-card-content>
+</mat-card>

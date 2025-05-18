@@ -1,9 +1,19 @@
 <nav class="navbar">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kezdőlap</a>
-    <a routerLink="/packages" routerLinkActive="active">Termékeink</a>
-    <a routerLink="/gallery" routerLinkActive="active">Galéria</a>
-    <a routerLink="/contact" routerLinkActive="active">Kapcsolat</a>
-    <a routerLink="/cart">Kosár</a>
+  <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Kezdőlap</a>
+  <a routerLink="/packages" routerLinkActive="active">Termékeink</a>
+  <a routerLink="/gallery" routerLinkActive="active">Galéria</a>
+  <a routerLink="/contact" routerLinkActive="active">Kapcsolat</a>
+  <a routerLink="/cart" routerLinkActive="active">Kosár</a>
+  <a routerLink="/rendeleseim" routerLinkActive="active">Rendeléseim</a>
+  <a routerLink="/profil" routerLinkActive="active">Profil</a>
+
+
+  <ng-container *ngIf="bejelentkezve; else belepes">
+    <a (click)="kijelentkezes()" style="cursor: pointer;">Kilépés</a>
+  </ng-container>
+  <ng-template #belepes>
     <a routerLink="/login" routerLinkActive="active">Belépés / Regisztráció</a>
-    <a routerLink="/admin" routerLinkActive="active">Admin</a>
-  </nav>
+  </ng-template>
+
+  <a routerLink="/admin" routerLinkActive="active">Admin</a>
+</nav>

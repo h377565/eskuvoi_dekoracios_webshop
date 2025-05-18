@@ -1,0 +1,24 @@
+<h2 class="rendelesek-cim">Saját rendeléseim</h2>
+
+<ng-container *ngIf="rendelesek$ | async as rendelesek; else nincs">
+  <mat-card *ngFor="let rendeles of rendelesek" class="rendeles-kartya">
+    <mat-card-header>
+      <mat-card-title>{{ rendeles.email }}</mat-card-title>
+      <mat-card-subtitle>{{ rendeles.datum | date:'medium' }}</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-card-content>
+      <ul class="termek-lista">
+        <li *ngFor="let t of rendeles.termekek">
+          <strong>{{ t.name }}</strong> – {{ t.price | currency:'HUF' }}
+        </li>
+      </ul>
+      <p class="osszeg"><strong>Összeg:</strong> {{ rendeles.osszeg | currency:'HUF' }}</p>
+      <p *ngIf="rendeles.megjegyzes"><strong>Megjegyzés:</strong> {{ rendeles.megjegyzes }}</p>
+    </mat-card-content>
+  </mat-card>
+</ng-container>
+
+<ng-template #nincs>
+  <p class="nincs-rendeles">Nincs leadott rendelésed.</p>
+</ng-template>

@@ -11,5 +11,5 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'eskuvoi_dekoracios_webshop';
+  title = 'eskuvoidekoracioswebshop';
 }

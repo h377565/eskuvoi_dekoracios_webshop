@@ -27,5 +27,13 @@
       <p><strong>Összesen: {{ getTotal() | currency:'HUF' }}</strong></p>
       <button mat-raised-button color="warn" (click)="clearCart()">Kosár törlése</button>
     </div>
+    <button
+  mat-raised-button
+  color="primary"
+  (click)="rendelesLead()"
+  [disabled]="cartItems.length === 0">
+  Rendelés leadása
+</button>
+
   </div>
 </div>

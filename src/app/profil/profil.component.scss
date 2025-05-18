@@ -1,0 +1,69 @@
+/* Konténer középre igazítva */
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Form mezők stílusa */
+mat-form-field {
+  width: 100%;
+
+  .mat-label {
+    color: #fff !important; // Fehér label (pl. "Név")
+    font-weight: bold;
+  }
+
+  .mat-input-element {
+    color: #fff !important; // Beírt szöveg
+    caret-color: #fff;
+  }
+
+  .mat-form-field-flex {
+    background-color: #5a4a5c; // Halvány sötétszürke háttér
+    border-radius: 8px;
+    padding: 8px 12px;
+  }
+
+  .mat-form-field-underline {
+    background-color: #f5008f !important; // Pink alsó vonal
+  }
+
+  .mat-form-field-disabled .mat-input-element {
+    color: #ddd !important; // Email szürkésebb, de látható
+  }
+}
+
+/* Gombok színezése */
+button {
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 10px 24px;
+}
+
+/* Mentés gomb */
+button[color="primary"] {
+  background-color: #f5008f;
+  color: white;
+  box-shadow: 0 4px 10px rgba(245, 0, 143, 0.3);
+}
+
+/* Fiók törlése gomb */
+button[color="warn"] {
+  color: #f5008f;
+  border: 1px solid #f5008f;
+  background-color: white;
+  transition: 0.3s ease;
+}
+
+button[color="warn"]:hover {
+  background-color: #f5008f;
+  color: white;
+}
+.mat-form-field-disabled .mat-input-element {
+  color: #fff !important; // Teljesen fehér
+  opacity: 1 !important;  // Ne legyen halvány
+  -webkit-text-fill-color: #fff !important; // Safari fix
+}

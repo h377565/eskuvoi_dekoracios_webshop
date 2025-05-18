@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'eskuvoi_dekoracios_webshop' title`, () => {
+  it(`should have the 'eskuvoidekoracioswebshop' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('eskuvoi_dekoracios_webshop');
+    expect(app.title).toEqual('eskuvoidekoracioswebshop');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, eskuvoi_dekoracios_webshop');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, eskuvoidekoracioswebshop');
   });
 });

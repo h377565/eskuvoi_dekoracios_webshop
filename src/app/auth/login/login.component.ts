@@ -1,47 +1,45 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../../shared/material.module';
+import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
+import { inject } from '@angular/core';
+import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    RouterModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule
-  ],
+  imports: [CommonModule, ReactiveFormsModule, MaterialModule,  RouterModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-  loginForm!: FormGroup;
+export class LoginComponent {
+  loginForm: FormGroup;
+  auth = inject(Auth);
+  router = inject(Router);
 
-  constructor(private fb: FormBuilder, private router: Router) {}
-
-  ngOnInit(): void {
+  constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
   }
 
-  onSubmit(): void {
+  onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
 
-      if (email === 'admin@admin.hu' && password === 'admin') {
-        localStorage.setItem('isLoggedIn', 'true');
-        this.router.navigate(['/admin']);
-      } else {
-        alert('Hibás adatok!');
-      }
+      signInWithEmailAndPassword(this.auth, email, password)
+        .then(() => {
+          alert('Sikeres bejelentkezés!');
+          this.router.navigate(['/']);
+        })
+        .catch(err => {
+          alert('Hiba: ' + err.message);
+        });
     }
   }
 }
